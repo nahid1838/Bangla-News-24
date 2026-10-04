@@ -8,7 +8,10 @@ const NewsDetailsPage = async ({ params }: {params: {newsId: string}}) => {
   );
   const data = await res.json();
   const news = data.data;
-  console.log(data);
+
+  if(!news) {
+    return
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
