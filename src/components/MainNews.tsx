@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-interface IMainNews {
+export interface IMainNews {
     id: string;
     title: string;
     description: string;

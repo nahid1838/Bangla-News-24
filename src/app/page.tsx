@@ -2,12 +2,26 @@ import MainNews from "@/components/MainNews";
 import MostReaded from "@/components/MostReaded";
 import NewsCard from "@/components/NewsCard";
 
+interface IOtherSections {
+  curationId: string;
+  title: string;
+  curationType: string;
+  articles: {
+    id: string;
+    title: string;
+    description: string;
+    category: string;
+    imageUrl: string;
+    imageAlt: string;
+  }[];
+}
+
 export default async function Home() {
   const res = await fetch("https://news-api-v2.vercel.app/api/news/sections");
   const data = await res.json();
   const sections = data.data;
   const mainNews = sections[0].articles;
-  const otherSections = sections.slice(1);
+  const otherSections: IOtherSections[] = sections.slice(1);
   const filteredOtherSections = otherSections.filter(filteredOtherSection => filteredOtherSection.curationType !== "tipo-curation");
 
   return (
@@ -16,7 +30,7 @@ export default async function Home() {
         <div className="col-span-2">
           <MainNews mainNews={mainNews}></MainNews>
           <div>
-            {filteredOtherSections.map((otherSection, id) => (
+            {filteredOtherSections.map((otherSection, id: number) => (
               <div className="mt-5" key={id}>
                 <p className="border-b-2 border-red-800 py-3 text-xl font-semibold">{otherSection.title}</p>
 
