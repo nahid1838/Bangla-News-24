@@ -1,5 +1,6 @@
 import Image from "next/image";
 import NavLinks from "./NavLinks";
+import UserInfo from "./UserInfo";
 
 const Header = async () => {
   const date = new Date().toLocaleString("bn-BD", {
@@ -17,10 +18,7 @@ const Header = async () => {
         </div>
       </div>
 
-      <div className=" absolute right-4 top-4 flex items-center gap-3 text-sm">
-        <button className="btn">সাইন ইন</button>
-        <button className="btn bg-red-600 text-white">সাইন আপ</button>
-      </div>
+      <UserInfo/>
 
       <NavLinks></NavLinks>
       
