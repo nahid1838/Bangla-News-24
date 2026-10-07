@@ -1,4 +1,5 @@
 import NewsCard, { INews } from "@/components/NewsCard";
+import { notFound } from "next/navigation";
 
 const CategoryNews = async ({params}: {params: {categoryId: string}}) => {
 
@@ -7,6 +8,10 @@ const CategoryNews = async ({params}: {params: {categoryId: string}}) => {
     const res = await fetch(`https://news-api-v2.vercel.app/api/category/${categoryId}`);
     const data = await res.json();
     const categoryNews: INews[] = data.data;
+
+    if(!categoryNews) {
+        notFound();
+      }
 
     return (
         <div className="container mx-auto mt-5">

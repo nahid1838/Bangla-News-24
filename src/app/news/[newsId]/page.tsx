@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 const NewsDetailsPage = async ({ params }: {params: {newsId: string}}) => {
   const { newsId } = await params;
@@ -10,7 +11,7 @@ const NewsDetailsPage = async ({ params }: {params: {newsId: string}}) => {
   const news = data.data;
 
   if(!news) {
-    return
+    notFound();
   }
 
   return (
