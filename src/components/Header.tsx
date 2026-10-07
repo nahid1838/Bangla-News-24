@@ -7,21 +7,32 @@ const Header = async () => {
     dateStyle: "full",
   });
 
-
   return (
-    <header className=" relative container mx-auto p-4">
-      <div className="flex items-center gap-1 justify-center sm:flex-row sm:gap-4">
-        <Image src={"/logo.webp"} alt="Header Logo" height={50} width={50} />
-        <div className="flex flex-col items-center sm:items-start">
-          <h3 className="text-3xl font-bold text-red-700">Bangla News 24</h3>
-          <p className="text-gray-600">{date}</p>
+    <header className="relative container mx-auto px-4 py-4 sm:py-5 ">
+      <div className="mb-3 flex justify-end sm:absolute sm:right-4 sm:top-4 sm:mb-0">
+        <UserInfo />
+      </div>
+
+      <div className="flex items-center justify-center gap-2 sm:gap-4">
+        <Image
+          src={"/logo.webp"}
+          alt="Header Logo"
+          height={50}
+          width={50}
+          priority
+          className="h-10 w-10 sm:h-[50px] sm:w-[50px]"
+        />
+        <div className="flex flex-col items-start">
+          <h3 className="text-2xl font-bold text-red-700 sm:text-3xl lg:text-4xl">
+            Bangla News 24
+          </h3>
+          <p className="text-xs text-gray-600 sm:text-sm lg:text-base">
+            {date}
+          </p>
         </div>
       </div>
 
-      <UserInfo/>
-
-      <NavLinks></NavLinks>
-      
+      <NavLinks />
     </header>
   );
 };

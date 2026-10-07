@@ -14,7 +14,7 @@ const MainNews = ({ mainNews }: { mainNews: IMainNews[] }) => {
   const [firstNews, ...otherNews] = mainNews;
 
   return (
-    <div className="flex gap-5">
+    <div className="flex flex-col md:flex-row gap-5">
         <Link  href={`/news/${firstNews.id}`} className=" group card bg-base-100 flex-1 border border-gray-300 rounded-2xl shadow-sm">
           <figure className="overflow-hidden">
             <Image

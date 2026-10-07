@@ -30,7 +30,7 @@ const UpdateProfilePage = () => {
     <div className="container mx-auto my-5">
       <div className="flex flex-col justify-center items-center gap-3">
         <img
-          className="h-65 w-65 rounded-full object-cover"
+          className="h-50 md:h-65 w-50 md:w-65 rounded-full object-cover"
           src={
             user?.image ||
             ("https://i.pinimg.com/736x/d8/49/60/d8496092785fd2db229247487c9f142a.jpg" as string)
@@ -53,13 +53,13 @@ const UpdateProfilePage = () => {
         </button>
         </div>
       ) : (
-        <form className="flex justify-center" onSubmit={handleUpdateProfile}>
+        <form className="flex items-center justify-center" onSubmit={handleUpdateProfile}>
           <fieldset className=" flex flex-col gap-2 rounded-box w-lg p-4">
             <label className="label text-gray-800">নাম</label>
             <input
               name="name"
               type="name"
-              className="input w-lg"
+              className="input w-s md:w-lg"
               placeholder="Name"
             />
 
@@ -67,13 +67,13 @@ const UpdateProfilePage = () => {
             <input
               name="image"
               type="url"
-              className="input w-lg"
+              className="input w-s md:w-lg"
               placeholder="Image"
             />
 
             <button
               type="submit"
-              className="btn bg-red-700 text-white mt-4 w-lg"
+              className="btn w-fit mx-auto md:mx-0 bg-red-700 text-white mt-4 md:w-lg"
             >
               Update Profile
             </button>

@@ -18,6 +18,7 @@ const SignInPage = () => {
       callbackURL: "/",
     });
 
+
     if (data) {
       toast.success("সাইন ইন সফল হয়েছে", {
         position: "top-left",
@@ -66,8 +67,8 @@ const SignInPage = () => {
         সাইন ইন
       </legend>
 
-      <div className="flex gap-5 justify-center pb-3">
-            <button onClick={handleGoogleSignIn} className="btn bg-white text-black border-[#e5e5e5]">
+      <div className="flex flex-col md:flex-row gap-5 justify-center pb-3">
+            <button onClick={handleGoogleSignIn} className="btn w-fit md:w-s mx-auto md:mx-0 bg-white text-black border-[#e5e5e5]">
               <svg
                 aria-label="Google logo"
                 width="16"
@@ -98,7 +99,7 @@ const SignInPage = () => {
               SignIn with Google
             </button>
 
-            <button onClick={handleGithubSignIn} className="btn bg-black text-white border-black">
+            <button onClick={handleGithubSignIn} className="btn w-fit md:w-s mx-auto md:mx-0 bg-black text-white border-black">
               <svg
                 aria-label="GitHub logo"
                 width="16"
@@ -121,7 +122,7 @@ const SignInPage = () => {
           <input
             name="email"
             type="email"
-            className="input w-lg"
+            className="input w-s md:w-lg"
             placeholder="Email"
           />
 
@@ -129,11 +130,11 @@ const SignInPage = () => {
           <input
             name="password"
             type="password"
-            className="input w-lg"
+            className="input w-s md:w-lg"
             placeholder="Password"
           />
 
-          <button className="btn bg-red-700 text-white mt-4 w-lg">
+          <button className="btn bg-red-700 text-white mt-4 w-fit mx-auto md:mx-0 md:w-lg">
             সাইন ইন করুন
           </button>
         </fieldset>

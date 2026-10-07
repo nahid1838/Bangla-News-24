@@ -8,70 +8,41 @@ const sans = Hind_Siliguri({
 const serif = Noto_Serif_Bengali({ subsets: ["bengali", "latin"] });
 
 
-const sections = [
-  { label: "সর্বশেষ", href: "/latest" },
-  { label: "বাংলাদেশ", href: "/bangladesh" },
-  { label: "আন্তর্জাতিক", href: "/international" },
-  { label: "অর্থনীতি", href: "/economy" },
-  { label: "খেলা", href: "/sports" },
-  { label: "বিনোদন", href: "/entertainment" },
-];
-
 export default function NotFound() {
   return (
     <main
-      className={`${sans.className} grid min-h-screen place-items-center bg-slate-100 px-5 py-10 text-slate-900 dark:bg-[#0b1320] dark:text-slate-100`}
+      className={`${sans.className} container mx-auto grid min-h-[70dvh] place-items-center bg-slate-100 px-4 py-8 text-slate-900 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:min-h-[75dvh] lg:py-20 xl:py-24 dark:bg-[#0b1320] dark:text-slate-100`}
     >
-      {/* টিকারের অ্যানিমেশন */}
       <style>{`
         @keyframes nf-slide { to { transform: translateX(-50%); } }
-        .nf-run { animation: nf-slide 28s linear infinite; }
+        .nf-run { animation: nf-slide 20s linear infinite; }
+        @media (min-width: 640px) { .nf-run { animation-duration: 28s; } }
+        @media (min-width: 1280px) { .nf-run { animation-duration: 34s; } }
         @media (prefers-reduced-motion: reduce) { .nf-run { animation: none; } }
       `}</style>
 
-      <section className="w-full max-w-2xl text-center">
-        {/* বড় ৪০৪ */}
+      <section className="w-full max-w-md text-center sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
+        
         <h1
-          className={`${serif.className} text-[clamp(6rem,26vw,13rem)] font-black leading-[1.05] tracking-tight`}
+          className={`${serif.className} text-7xl leading-[1.05] font-black tracking-tight sm:text-8xl md:text-9xl lg:text-[11rem] xl:text-[13rem]`}
         >
           ৪০৪
         </h1>
-
-        {/* ব্রেকিং টিকার */}
-        <div
-          aria-hidden="true"
-          className="mb-9 mt-2 flex overflow-hidden rounded bg-red-600 text-white dark:bg-red-500"
-        >
-          <span className="flex-none bg-slate-900 px-4 py-2 font-bold text-slate-100 dark:bg-slate-100 dark:text-slate-900">
-            ব্রেকিং
-          </span>
-          <div className="flex flex-1 items-center overflow-hidden">
-            <div className="nf-run flex flex-none whitespace-nowrap">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <span key={i} className="flex items-center pr-12 font-medium">
-                  <span className="mr-12 inline-block h-2 w-2 rounded-full bg-white/70" />
-                  এই পাতাটি খুঁজে পাওয়া যায়নি
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
         <h2
-          className={`${serif.className} mb-3 text-2xl font-bold leading-snug sm:text-3xl`}
+          className={`${serif.className} mb-3 text-xl leading-snug font-bold sm:text-2xl md:mb-4 md:text-3xl lg:text-4xl xl:text-5xl`}
         >
           আপনি যে খবরটি খুঁজছেন, সেটি এখানে নেই
         </h2>
-        <p className="mx-auto mb-8 max-w-lg text-lg leading-8 text-slate-600 dark:text-slate-400">
+        <p className="mx-auto mb-6 max-w-sm text-base leading-7 text-slate-600 sm:mb-8 sm:max-w-lg sm:text-lg sm:leading-8 md:max-w-xl lg:mb-10 lg:max-w-2xl lg:text-xl lg:leading-9 dark:text-slate-400">
           লিংকটি ভুল হতে পারে, অথবা পাতাটি সরিয়ে নেওয়া হয়েছে। হোমপেজে ফিরে যান
           কিংবা নিচের বিভাগগুলো থেকে খবর পড়ুন।
         </p>
 
-        {/* বাটন */}
-        <div className="mb-10 flex flex-wrap justify-center gap-3">
+
+        <div className="mb-8 flex justify-center sm:mb-10 lg:mb-12">
           <Link
             href="/"
-            className="rounded-md border-2 border-slate-900 bg-slate-900 px-6 py-3 font-semibold text-slate-100 transition hover:border-red-600 hover:bg-red-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600 dark:border-slate-100 dark:bg-slate-100 dark:text-slate-900"
+            className="w-full rounded-md border-2 border-slate-900 bg-slate-900 px-6 py-3 text-center font-semibold text-slate-100 transition hover:border-red-600 hover:bg-red-600 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red-600 sm:w-auto sm:px-8 lg:px-10 lg:py-3.5 lg:text-lg dark:border-slate-100 dark:bg-slate-100 dark:text-slate-900"
           >
             হোমপেজে ফিরুন
           </Link>

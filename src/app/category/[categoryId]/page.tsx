@@ -15,9 +15,9 @@ const CategoryNews = async ({params}: {params: {categoryId: string}}) => {
 
     return (
         <div className="container mx-auto mt-5">
-            <h3 className="text-2xl font-bold border-b-2 border-red-800 py-2">{data.title}</h3>
+            <h3 className="text-2xl text-center md:text-left font-bold border-b-2 border-red-800 py-2">{data.title}</h3>
 
-            <div className="mt-5 grid grid-cols-3 gap-5">
+            <div className="mt-5 grid px-4 sm:px-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
                    categoryNews.map(news => <NewsCard key={news.id} news={news}/>)
                 }
