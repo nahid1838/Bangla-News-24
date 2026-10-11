@@ -21,7 +21,7 @@ export const auth = betterAuth({
         from: 'Acme <onboarding@resend.dev>',
         to: user.email,
         subject: 'Verify your email address',
-        html: `Click <a href="${url}">here</a> to verify your email.`,
+        html: `Click <a href="${url}">here to verify and continue</a> to verify your email.`,
       });
     },
     sendOnSignUp: true,

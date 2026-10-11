@@ -69,10 +69,33 @@ const SignUpPage = () => {
 
   const handleGoogleSignUp = async () => {
     await authClient.signIn.social({ provider: "google", callbackURL: "/" });
+    toast.success("Google সাইন আপ সফল হয়েছে", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
   };
 
   const handleGithubSignUp = async () => {
     await authClient.signIn.social({ provider: "github", callbackURL: "/" });
+
+    toast.success("GitHub সাইন আপ সফল হয়েছে", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
   };
 
   return (
@@ -151,7 +174,7 @@ const SignUpPage = () => {
             type="text"
             required
             autoComplete="name"
-            className="input w-full"
+            className="input w-s md:w-lg"
             placeholder="Name"
           />
 
@@ -162,7 +185,7 @@ const SignUpPage = () => {
             id="image"
             name="image"
             type="url"
-            className="input w-full"
+            className="input w-s md:w-lg"
             placeholder="https://..."
           />
 
@@ -175,7 +198,7 @@ const SignUpPage = () => {
             type="email"
             required
             autoComplete="email"
-            className="input w-full"
+            className="input w-s md:w-lg"
             placeholder="Email"
           />
 
@@ -189,7 +212,7 @@ const SignUpPage = () => {
             required
             minLength={8}
             autoComplete="new-password"
-            className="input w-full"
+            className="input w-s md:w-lg"
             placeholder="কমপক্ষে ৮ অক্ষর"
           />
 

@@ -53,12 +53,36 @@ const SignInPage = () => {
     const googleData = await authClient.signIn.social({
       provider: "google",
     })
+
+    toast.success("Google সাইন ইন সফল হয়েছে", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
   };
 
   const handleGithubSignIn = async () => {
     const githubData = await authClient.signIn.social({
       provider: "github",
     })
+
+    toast.success("GitHub সাইন ইন সফল হয়েছে", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
   }
 
   return (
@@ -117,7 +141,7 @@ const SignInPage = () => {
           </div>
 
       <form className="flex justify-center" onSubmit={onSubmit}>
-        <fieldset className=" flex flex-col gap-2 rounded-box w-lg p-4">
+        <fieldset className=" flex flex-col justify-center gap-2 rounded-box w-lg p-4">
           <label className="label text-gray-800">ইমেইল</label>
           <input
             name="email"
