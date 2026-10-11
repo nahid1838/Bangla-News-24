@@ -104,16 +104,16 @@ const UserInfo = () => {
           </ul>
         </div>
       ) : (
-        <div className="flex items-center gap-1.5 rounded-full border border-base-300 bg-base-100/80 p-1 shadow-sm backdrop-blur sm:gap-2">
+        <div className="flex items-center gap-0 rounded-full border border-base-300 bg-base-100/80 p-0.5 sm:p-1 shadow-sm backdrop-blur sm:gap-2">
           <Link
             href="/signIn"
-            className="btn btn-ghost rounded-full whitespace-nowrap px-3 sm:px-5"
+            className="btn btn-sm sm:btn-md btn-ghost rounded-full whitespace-nowrap px-2 sm:px-5"
           >
             সাইন ইন
           </Link>
           <Link
             href="/signUp"
-            className="btn bg-red-700 text-white font-semibold rounded-full whitespace-nowrap px-3 shadow sm:px-5"
+            className="btn btn-sm sm:btn-md bg-red-700 text-white font-semibold rounded-full whitespace-nowrap px-2 shadow sm:px-5"
           >
             সাইন আপ
           </Link>

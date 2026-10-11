@@ -9,9 +9,9 @@ const Header = async () => {
 
   return (
     <header className="relative container mx-auto px-4 py-4 sm:py-5">
-      <div className="flex items-start justify-between gap-2 sm:block">
+      <div className="flex items-center justify-between gap-2 lg:block">
         {/* Logo, Name and Date */}
-        <div className="flex min-w-0 items-center justify-start gap-2 sm:justify-center sm:gap-3 md:gap-4">
+        <div className="flex min-w-0 items-center justify-start gap-1 sm:justify-center sm:gap-3 md:gap-4">
           <Image
             src={"/logo.webp"}
             alt="Header Logo"
@@ -22,7 +22,7 @@ const Header = async () => {
           />
 
           <div className="flex min-w-0 flex-col items-start">
-            <h3 className="text-xl font-bold text-red-700 sm:text-2xl md:text-3xl lg:text-4xl">
+            <h3 className="text-lg font-bold text-red-700 sm:text-2xl md:text-3xl lg:text-4xl">
               Bangla News 24
             </h3>
 
